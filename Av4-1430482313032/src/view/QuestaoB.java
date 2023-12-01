@@ -122,8 +122,19 @@ public class QuestaoB {
 				}
 			}
 		});
-		btnEntrar.setBounds(174, 227, 89, 23);
+		btnEntrar.setBounds(111, 227, 89, 23);
 		frame.getContentPane().add(btnEntrar);
+		
+		JButton btnSair = new JButton("Sair");
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnSair.setBackground(new Color(255, 20, 147));
+		btnSair.setFont(new Font("Tahoma", Font.BOLD, 13));
+		btnSair.setBounds(225, 228, 89, 23);
+		frame.getContentPane().add(btnSair);
 		
 			
 	}
@@ -131,5 +142,4 @@ public class QuestaoB {
 	public boolean checkLogin(String login, String senha) {
 		return login.equals("admin") && senha.equals("123456");
 	}
-	
 }

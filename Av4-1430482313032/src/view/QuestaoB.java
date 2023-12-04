@@ -1,3 +1,17 @@
+/*Você foi designado para criar uma aplicação Java com interface gráfica usando o WindowBuilder, 
+ * o intuito desta é simular um sistema de vendas básico, composta por três telas distintas: 
+ * uma tela de login, uma tela de apresentação e uma última tela para realizar pedidos. 
+ * O problema consiste em projetar e implementar as interfaces dessas telas de forma intuitiva e eficiente, 
+ * garantindo uma experiência de usuário coesa e agradável.
+A tela de login deve incluir campos para inserção de nome de usuário (admin) e senha (123456), 
+além de um botão para efetuar o login. A tela de apresentação deve exibir informações relevantes sobre a aplicação e 
+fornecer um botão para acessar a tela de pedido. A última tela deve permitir ao usuário realizar pedidos, com campos 
+apropriados e opções de seleção, além de um botão para confirmar o pedido e limpar campos anteriormente preenchinhos.
+Ao confirmar o pedido, fica visível ao usuário o seu pedido.
+Os desafios incluem a validação adequada dos campos de entrada na tela de login, a transição suave entre as telas e a 
+implementação de uma lógica eficaz para o processo de pedido.*/
+
+
 package view;
 
 import java.awt.EventQueue;

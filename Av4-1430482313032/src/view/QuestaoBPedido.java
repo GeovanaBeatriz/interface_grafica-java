@@ -80,18 +80,43 @@ public class QuestaoBPedido {
 			return result;
 		}
 		
+		public static int contagemCheckBox() {
+			int soma = 0;
+			for(Component c : panelMenu.getComponents()) {
+				if(c.getClass().equals(JCheckBox.class)) {
+					JCheckBox jck = (JCheckBox) c;
+					if(jck.isSelected()) {
+						soma = soma + 1; 
+					}
+				}
+			}
+			return soma;
+		}
+		
 		public static String metodoPagamento() {
 			String metodo = "";
 			Enumeration<AbstractButton> bg = buttonGroup.getElements();
 			while(bg.hasMoreElements()) {
 				JRadioButton jrd = (JRadioButton) bg.nextElement();
 				if(jrd.isSelected()) {
-					metodo += jrd.getText(); 
+					metodo += jrd.getText();
 				}
 			}
 			return metodo;
 		}
 		
+		
+		public static int contagemPagamento() {
+			int soma = 0;
+			Enumeration<AbstractButton> bg = buttonGroup.getElements();
+			while(bg.hasMoreElements()) {
+				JRadioButton jrd = (JRadioButton) bg.nextElement();
+				if(jrd.isSelected()) {
+					soma = soma + 1;
+				}
+			}
+			return soma;
+		}
 		
 
 	/**
@@ -158,13 +183,18 @@ public class QuestaoBPedido {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				
 				String nome, cpf, obs;
 				
+				if(txtNome.getText().isEmpty() || txtCPF.getText().isEmpty() || contagemPagamento() == 0 || contagemCheckBox() == 0) {
+					JOptionPane.showMessageDialog(null, "Preencha os campos!");
+					txtNome.requestFocus();
+				}
+				else {
 				nome = txtNome.getText();
 				cpf = txtCPF.getText();
 				obs = txtObs.getText();
 		
-				
 				
 				int resultado = JOptionPane.showConfirmDialog(null, "DADOS DO CLIENTE" + "\r\n" +
 				"Nome: " + nome + "\r\n" + 
@@ -220,9 +250,9 @@ public class QuestaoBPedido {
 			       
 				}
 				
+				}
 				
-				
-				
+			
 				
 			}
 		});
